@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Rush Racer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="hud" aria-label="Race status">
+        <div class="hud-item"><span>Lives</span><strong id="lives">3</strong></div>
+        <div class="hud-item"><span>Time</span><strong id="timer">120</strong></div>
+        <div class="hud-item wide"><span>Distance</span><strong><b id="distance">0</b> / 5000 m</strong></div>
+        <div class="hud-item"><span>Score</span><strong id="score">0</strong></div>
+        <div class="hud-item"><span>Speed</span><strong><b id="speed">0</b> km/h</strong></div>
+      </section>
+
+      <section class="track-wrap">
+        <canvas id="gameCanvas" width="900" height="620" aria-label="Car racing game"></canvas>
+
+        <div class="screen active" id="menuScreen">
+          <h1>Color Rush Racer</h1>
+          <p>Choose a bright ride, dodge traffic, collect coins, and reach 5000 meters before the timer runs out.</p>
+          <div class="car-picker" id="carPicker" aria-label="Choose car color"></div>
+          <button class="primary" id="startBtn">Start Race</button>
+        </div>
+
+        <div class="screen" id="pauseScreen">
+          <h2>Race Paused</h2>
+          <button class="primary" id="resumeBtn">Resume</button>
+          <button id="pauseRestartBtn">Restart</button>
+        </div>
+
+        <div class="screen" id="resultScreen">
+          <h2 id="resultTitle">Game Over</h2>
+          <p id="resultText"></p>
+          <div class="leaderboard">
+            <span>Best Scores</span>
+            <ol id="leaderboard"></ol>
+          </div>
+          <button class="primary" id="playAgainBtn">Race Again</button>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Game controls">
+        <button id="leftBtn" aria-label="Move left">Left</button>
+        <button id="brakeBtn" aria-label="Brake">Brake</button>
+        <button id="boostBtn" aria-label="Nitro boost">Nitro <span id="nitroCount">3</span></button>
+        <button id="gasBtn" aria-label="Accelerate">Gas</button>
+        <button id="rightBtn" aria-label="Move right">Right</button>
+      </section>
+
+      <section class="actions">
+        <button id="pauseBtn">Pause</button>
+        <button id="restartBtn">Restart</button>
+        <button id="muteBtn">Sound On</button>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
